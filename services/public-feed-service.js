@@ -9,7 +9,7 @@ var request = require('request');
 // get flickr images using flick endpoint. serach input is passed as param
 router.get('/getFlickrPictures', (req, res, next) => {
         request.get({
-            url: ws_url + '?method=flickr.photos.search&api_key='+api_key+'&tags='+ req.query.searchInput+'&per_page=50&page=1&format=json&nojsoncallback=1'
+            url: ws_url + '?method=flickr.photos.search&api_key='+api_key+'&tags='+ req.query.searchInput+'&per_page='+req.query.count+'&page=1&format=json&nojsoncallback=1'
         }, (err, resp, body) => {
             if (err) {
                 next(err);

@@ -15,7 +15,9 @@ app.use(express.json());
 //to support URL-encoded bodies
 app.use(express.urlencoded());
 var publicFeedService = require('./services/public-feed-service');
-app.use('/public-feed', publicFeedService);
+app.use('/publicFeed', publicFeedService);
 
 app.listen(process.env.PORT, () => {
 });
+
+module.exports = app;
